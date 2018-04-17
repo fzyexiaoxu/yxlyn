@@ -19,6 +19,16 @@ import org.eclipse.mylyn.tasks.core.IRepositoryElement;
 import org.eclipse.mylyn.tasks.core.TaskRepository;
 import org.eclipse.mylyn.tasks.ui.TasksUiUtil;
 import org.eclipse.ui.actions.BaseSelectionListenerAction;
+import org.eclipse.mylyn.tasks.core.ITask;
+import org.eclipse.mylyn.tasks.core.ITask.PriorityLevel;
+import org.eclipse.mylyn.tasks.core.ITaskActivationListener;
+import org.eclipse.mylyn.tasks.core.ITaskActivityListener;
+import org.eclipse.mylyn.tasks.core.ITaskContainer;
+import org.eclipse.mylyn.tasks.core.TaskActivationAdapter;
+import org.eclipse.mylyn.tasks.core.TaskActivityAdapter;
+import org.eclipse.mylyn.tasks.core.TaskRepository;
+import org.eclipse.mylyn.tasks.ui.ITasksUiConstants;
+import org.eclipse.mylyn.tasks.ui.TaskElementLabelProvider;
 import org.eclipse.mylyn.tasks.ui.TasksUi;
 /**
  * @author Mik Kersten
