@@ -64,7 +64,7 @@ public class OpenDevWithBrowserAction extends BaseSelectionListenerAction {
 				 TasksUiUtil.openDevtool(devToolUrl +"?taskid="   + task.getTaskId() 
 				                                    +"&taskKey="  + task.getTaskKey() 
 				                                    +"&taskKind=" + task.getTaskKind()
-				                                    +"&taskDesc=" + task.getDescription()
+				                                    +"&taskSummary=" + task.getSummary()
 				                                    );	
 				}
 		
