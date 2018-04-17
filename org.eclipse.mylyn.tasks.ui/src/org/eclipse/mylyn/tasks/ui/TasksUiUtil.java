@@ -398,6 +398,16 @@ public class TasksUiUtil {
 	 *
 	 * @since 3.4
 	 */
+	public static boolean openDevtool(String url) {
+		openUrl(url);
+		return true;
+	}
+
+	/**
+	 * Opens <code>element</code> in a browser using an authenticated URL if available.
+	 *
+	 * @since 3.4
+	 */
 	public static boolean openWithBrowser(IRepositoryElement element) {
 		TaskRepository repository = TasksUiInternal.getRepository(element);
 		return (repository != null) ? openWithBrowser(repository, element) : false;

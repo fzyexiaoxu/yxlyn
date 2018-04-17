@@ -19,7 +19,7 @@ import org.eclipse.mylyn.tasks.core.IRepositoryElement;
 import org.eclipse.mylyn.tasks.core.TaskRepository;
 import org.eclipse.mylyn.tasks.ui.TasksUiUtil;
 import org.eclipse.ui.actions.BaseSelectionListenerAction;
-
+import org.eclipse.mylyn.tasks.ui.TasksUi;
 /**
  * @author Mik Kersten
  * @author Rob Elves
@@ -28,7 +28,7 @@ import org.eclipse.ui.actions.BaseSelectionListenerAction;
 public class OpenDevWithBrowserAction extends BaseSelectionListenerAction {
 
 	public static final String ID = "org.eclipse.mylyn.tasklist.actions.open.devtoolbrowser"; //$NON-NLS-1$
-
+  public String devToolUrl = "http://localhost:8099";
 	public OpenDevWithBrowserAction() {
 		super(Messages.OpenDevWithBrowserAction_Open_with_Browser);
 		setToolTipText(Messages.OpenDevWithBrowserAction_Open_with_Browser);
@@ -46,7 +46,18 @@ public class OpenDevWithBrowserAction extends BaseSelectionListenerAction {
 
 	private void runWithSelection(Object selectedObject) {
 		if (selectedObject instanceof IRepositoryElement) {
-			TasksUiUtil.openWithBrowser((IRepositoryElement) selectedObject);
+			 devToolUrl = System.getEnv("ECLIPSE_DEVELOPTOOL_URL");
+			if (devToolUrl is null || devToolUrl == "")
+			   devToolUrl = "http://localhost:8099";
+			ITask task = TasksUi.getTaskActivityManager().getActiveTask();
+			if (task != null) {
+				 TasksUiUtil.openDevtool(devToolUrl +'?taskid='   + task.getTaskId() 
+				                                    +'&taskKey='  + task.getTaskKey() 
+				                                    +'&taskKind=' + task.getTaskKind()
+				                                    +'&taskDesc=' + task.getDescription()
+				                                    );	
+				}
+		
 		}
 	}
 
@@ -55,8 +66,7 @@ public class OpenDevWithBrowserAction extends BaseSelectionListenerAction {
 		if (!selection.isEmpty()) {
 			for (Object element : selection.toList()) {
 				if (element instanceof IRepositoryElement) {
-						String url = "http://localhost:8888";
-						if (TasksUiInternal.isValidUrl(url)) {
+						if (TasksUiInternal.isValidUrl(devToolUrl)) {
 							return true;
 						}
 				}

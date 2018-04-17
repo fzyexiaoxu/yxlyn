@@ -14,7 +14,7 @@
   <name>Mylyn Tasks</name>
   <packaging>pom</packaging>
   <properties>
-    <tycho.scmUrl>scm:git:git://git.eclipse.org/gitroot/mylyn/org.eclipse.mylyn.tasks.git</tycho.scmUrl>
+    <tycho.scmUrl>scm:git:git://github.com/fzyexiaoxu/yxlyn.git</tycho.scmUrl>
   </properties>
   <mailingLists>
     <mailingList>
