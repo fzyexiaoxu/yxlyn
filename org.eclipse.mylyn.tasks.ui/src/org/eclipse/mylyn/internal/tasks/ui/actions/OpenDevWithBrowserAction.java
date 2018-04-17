@@ -46,7 +46,7 @@ public class OpenDevWithBrowserAction extends BaseSelectionListenerAction {
 
 	private void runWithSelection(Object selectedObject) {
 		if (selectedObject instanceof IRepositoryElement) {
-			 devToolUrl = System.getEnv("ECLIPSE_DEVELOPTOOL_URL");
+			 devToolUrl = System.getenv("ECLIPSE_DEVELOPTOOL_URL");
 			if (devToolUrl == null || devToolUrl == "")
 			   devToolUrl = "http://localhost:8099";
 			ITask task = TasksUi.getTaskActivityManager().getActiveTask();
