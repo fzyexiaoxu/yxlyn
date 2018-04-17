@@ -51,10 +51,10 @@ public class OpenDevWithBrowserAction extends BaseSelectionListenerAction {
 			   devToolUrl = "http://localhost:8099";
 			ITask task = TasksUi.getTaskActivityManager().getActiveTask();
 			if (task != null) {
-				 TasksUiUtil.openDevtool(devToolUrl +'?taskid='   + task.getTaskId() 
-				                                    +'&taskKey='  + task.getTaskKey() 
-				                                    +'&taskKind=' + task.getTaskKind()
-				                                    +'&taskDesc=' + task.getDescription()
+				 TasksUiUtil.openDevtool(devToolUrl +"?taskid="   + task.getTaskId() 
+				                                    +"&taskKey="  + task.getTaskKey() 
+				                                    +"&taskKind=" + task.getTaskKind()
+				                                    +"&taskDesc=" + task.getDescription()
 				                                    );	
 				}
 		
