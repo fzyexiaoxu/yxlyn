@@ -86,6 +86,8 @@ public class RepositoryElementActionGroup {
 
 	private final OpenWithBrowserAction openWithBrowserAction;
 
+	private final OpenDevWithBrowserAction openDevWithBrowserAction;
+
 	private final DeleteAction deleteAction;
 
 	private final DeleteTaskEditorAction deleteTaskEditorAction;
@@ -134,6 +136,7 @@ public class RepositoryElementActionGroup {
 		deleteTaskEditorAction = add(new DeleteTaskEditorAction());
 		openAction = add(new OpenTaskListElementAction());
 		openWithBrowserAction = add(new OpenWithBrowserAction());
+		openDevWithBrowserAction = add(new OpenDevWithBrowserAction());
 		showInSearchViewAction = add(new ShowInSearchViewAction());
 		showInTaskListAction = add(new ShowInTaskListAction());
 
@@ -208,6 +211,7 @@ public class RepositoryElementActionGroup {
 		if (openWithBrowserAction.isEnabled()) {
 			manager.appendToGroup(ID_SEPARATOR_OPEN, openWithBrowserAction);
 		}
+		manager.appendToGroup(ID_SEPARATOR_OPEN, openDevWithBrowserAction);
 		showInSearchViewAction.selectionChanged(selection);
 		if (showInSearchViewAction.isEnabled()) {
 			manager.appendToGroup(ID_SEPARATOR_OPEN, showInSearchViewAction);

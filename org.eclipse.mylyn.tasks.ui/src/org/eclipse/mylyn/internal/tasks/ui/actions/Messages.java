@@ -223,6 +223,8 @@ public class Messages extends NLS {
 
 	public static String OpenWithBrowserAction_Open_with_Browser;
 
+	public static String OpenDevWithBrowserAction_Open_with_Browser;
+
 	public static String PresentationDropDownSelectionAction_Task_Presentation;
 
 	public static String QueryCloneAction_Clone_Query;

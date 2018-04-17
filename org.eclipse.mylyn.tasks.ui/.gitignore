@@ -4,6 +4,6 @@ target/
 *~
 test-attach-*.txt
 messages.properties
-Messages.java
+messages.java
 RepositoryElementActionGroup.java
 OpenDevToolWithBrowserAction.java
